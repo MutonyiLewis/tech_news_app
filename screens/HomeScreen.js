@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Text, SafeAreaView, ScrollView} from "react-native";
+import {StyleSheet,SafeAreaView} from "react-native";
 import Article from "../components/Article";
 
 const HomeScreen = () => {
