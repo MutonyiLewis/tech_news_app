@@ -1,30 +1,33 @@
 import React from 'react'
 import {Image, SafeAreaView, StyleSheet, Text, View} from "react-native";
+import moment from "moment";
 
 
-const Article = () => {
+const Article = (props) => {
     return(
         <SafeAreaView style={styles.container}>
             {/*image*/}
             <Image source={{
-                uri: "https://app.gemoo.com/share/image-annotation/555593990881419264?codeId=vz2ewLxnWpKpa&origin=imageurlgenerator"
+                uri: props.urlToImage
             }}
             style={styles.image}/>
           <View style={{padding:20}}>
             {/*Title*/}
-            <Text style={styles.title}>Tech News Application using React Native</Text>
+            <Text style={styles.title}>{props.title}</Text>
 
             {/*Description*/}
-            <Text style={styles.description}>You are wabulubududbdub on Native react You are wabulubududbdub on Native react You are wabulubududbdub on Native react You are wabulubududbdub on Native react</Text>
+            <Text style={styles.description} numberOfLines={3}>
+                {props.description}
+            </Text>
 
             <View style={styles.data}>
-                <Text style={styles.heading}>by: <Text style={styles.author}>Lewis Mutonyi</Text></Text>
-                <Text style={styles.date}>29th Aug 23</Text>
+                <Text style={styles.heading}>by: <Text style={styles.author}>{props.author}</Text></Text>
+                <Text style={styles.date}>{moment(props.publishedAt).format("MMM Do YY")}</Text>
             </View>
 
             {/* Source */}
             <View style={{marginTop:10}}>
-                <Text>source: <Text style={styles.source}>Programming knowledge</Text></Text>
+                <Text>source: <Text style={styles.source}>{props.sourceName}</Text></Text>
             </View>
           </View>
         </SafeAreaView>
@@ -80,5 +83,9 @@ const styles = StyleSheet.create({
         color: "#BB342F",
         fontWeight: "bold",
         fontSize: 18
-    }
+    },
+    // @media screen and (max-width: 1024px){
+    // container:{
+    //
+    // }
 })
