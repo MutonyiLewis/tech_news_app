@@ -9,11 +9,11 @@ const HomeScreen = () => {
 
     const getNews = () => {
         axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=d010b18835f04879afc821addfdfcbed',{
-            params:{
-                category: "technology"
+                params:{
+                    category: "technology"
+                }
             }
-            }
-          )
+        )
             .then( (response) => {
                 // handle success
                 console.log(response.data.articles);
@@ -37,13 +37,13 @@ const HomeScreen = () => {
             <FlatList
                 data={articles}
                 renderItem={({item}) =>
-                <Article
-                    urlToImage = {item.urlToImage}
-                    title ={item.title}
-                    description ={item.description}
-                    author ={item.author}
-                    publishedAt ={item.publishedAt}
-                    sourceName ={item.source.name}
+                    <Article
+                        urlToImage = {item.urlToImage}
+                        title ={item.title}
+                        description ={item.description}
+                        author ={item.author}
+                        publishedAt ={item.publishedAt}
+                        sourceName ={item.source.name}
                     />}
                 keyExtractor = {(item) => item.title}
             />

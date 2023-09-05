@@ -10,26 +10,26 @@ const Article = (props) => {
             <Image source={{
                 uri: props.urlToImage
             }}
-            style={styles.image}/>
-          <View style={{padding:20}}>
-            {/*Title*/}
-            <Text style={styles.title}>{props.title}</Text>
+                   style={styles.image}/>
+            <View style={{padding:20}}>
+                {/*Title*/}
+                <Text style={styles.title}>{props.title}</Text>
 
-            {/*Description*/}
-            <Text style={styles.description} numberOfLines={3}>
-                {props.description}
-            </Text>
+                {/*Description*/}
+                <Text style={styles.description} numberOfLines={3}>
+                    {props.description}
+                </Text>
 
-            <View style={styles.data}>
-                <Text style={styles.heading}>by: <Text style={styles.author}>{props.author}</Text></Text>
-                <Text style={styles.date}>{moment(props.publishedAt).format("MMM Do YY")}</Text>
+                <View style={styles.data}>
+                    <Text style={styles.heading}>by: <Text style={styles.author}>{props.author}</Text></Text>
+                    <Text style={styles.date}>{moment(props.publishedAt).format("MMM Do YY")}</Text>
+                </View>
+
+                {/* Source */}
+                <View style={{marginTop:10}}>
+                    <Text>source: <Text style={styles.source}>{props.sourceName}</Text></Text>
+                </View>
             </View>
-
-            {/* Source */}
-            <View style={{marginTop:10}}>
-                <Text>source: <Text style={styles.source}>{props.sourceName}</Text></Text>
-            </View>
-          </View>
         </SafeAreaView>
     )
 }
