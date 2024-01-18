@@ -1,11 +1,15 @@
 import React from 'react'
-import {Image, SafeAreaView, StyleSheet, Text, View} from "react-native";
+import {Image, Pressable, SafeAreaView, StyleSheet, Text, View} from "react-native";
 import moment from "moment";
-
+import * as WebBrowser from 'expo-web-browser';
 
 const Article = (props) => {
+
+    const goToSource = () =>{
+        WebBrowser.openBrowserAsync(props.url);
+    }
     return(
-        <SafeAreaView style={styles.container}>
+        <Pressable style={styles.container} onPress={goToSource}>
             {/*image*/}
             <Image source={{
                 uri: props.urlToImage
@@ -30,7 +34,7 @@ const Article = (props) => {
                     <Text>source: <Text style={styles.source}>{props.sourceName}</Text></Text>
                 </View>
             </View>
-        </SafeAreaView>
+        </Pressable>
     )
 }
 

@@ -1,18 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
+import React from "react"
 import { StyleSheet, View } from 'react-native';
 import HomeScreen from "./screens/HomeScreen";
 import {NavigationContainer} from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SearchScreen from "./screens/SearchScreen";
+import { AntDesign } from '@expo/vector-icons';
 
 
 const Tab = createBottomTabNavigator();
 export default function App() {
   return (
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Search" component={SearchScreen} />
-      </Tab.Navigator>
+      <NavigationContainer>
+          <Tab.Navigator screenOptions={{
+              tabBarActiveTintColor: "#006992",
+          }}>
+            <Tab.Screen name="Home" component={HomeScreen} options={{
+                tabBarIcon: () => <AntDesign name="home" size={24} color="black" />
+            }}/>
+            <Tab.Screen name="Search" component={SearchScreen} options={{
+                tabBarIcon: () => <AntDesign name="search1" size={24} color="black" />
+            }}/>
+          </Tab.Navigator>
+      </NavigationContainer>
   );
 }
 

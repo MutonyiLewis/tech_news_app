@@ -1,16 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import {StyleSheet,SafeAreaView, FlatList} from "react-native";
+import react, {useEffect, useState} from 'react';
+import {StyleSheet, SafeAreaView, FlatList, ScrollView} from "react-native";
 import Article from "../components/Article";
 import axios from "axios";
-
+///*<a href="https://www.flaticon.com/free-icons/sports" title="sports icons">Sports icons created by small.smiles - Flaticon</a>*/
 const HomeScreen = () => {
 
     const [articles, setArticles] = useState([]);
 
     const getNews = () => {
-        axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=d010b18835f04879afc821addfdfcbed',{
+        axios.get('https://newsapi.org/v2/top-headlines?country=gb&apiKey=d010b18835f04879afc821addfdfcbed',{
                 params:{
-                    category: "technology"
+                    category: "sports"
                 }
             }
         )
@@ -33,7 +33,7 @@ const HomeScreen = () => {
     }, []);
 
     return(
-        <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.container}>
             <FlatList
                 data={articles}
                 renderItem={({item}) =>
@@ -44,10 +44,11 @@ const HomeScreen = () => {
                         author ={item.author}
                         publishedAt ={item.publishedAt}
                         sourceName ={item.source.name}
+                        url = {item.url}
                     />}
                 keyExtractor = {(item) => item.title}
             />
-        </SafeAreaView>
+        </ScrollView>
     )
 }
 
