@@ -4,10 +4,10 @@
     "slug": "tech_news_app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/icon.png",
+      "image": "./assets/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,17 +19,17 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icon.png",
+        "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.mutonyilewis.news_app"
     },
     "web": {
-      "favicon": "./assets/icon.png"
+      "favicon": "./assets/logo.png"
     },
     "extra": {
       "eas": {
-        "projectId": "a250e328-5965-4498-8861-8b16b5895e99"
+        "projectId": "9b0ff32f-8547-4048-8447-e42f210e6e92"
       }
     }
   }
