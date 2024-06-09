@@ -10,7 +10,7 @@ const SearchScreen = () => {
     const[articles, setArticles] = useState("")
 
     const searchArticles = () => {
-        axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=d010b18835f04879afc821addfdfcbed',{
+        axios.get('https://newsapi.org/v2/top-headlines?country=gb&apiKey=d010b18835f04879afc821addfdfcbed',{
                 params:{
                     category: "technology",
                     q: searchText
